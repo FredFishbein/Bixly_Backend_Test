@@ -38,3 +38,4 @@ I've used Oath 2.0 from Google's API services for the authorization.
 
 I've disabled the login so please use the google button for testing purposes.
 
+Thank you, Fred
