@@ -213,7 +213,8 @@ Car.findOne({Make: req.params.id},function(err,foundCar){
 ///////////////// REQUESTS TARGETING ALL CARS (GET/POST) ////////////////////////
 
 
-app.route("/cars").get(function(req,res){
+app.route("/cars")
+.get(function(req,res){
 if (req.isAuthenticated()){
     Car.find(function(err,foundCars){
         if (!err){
