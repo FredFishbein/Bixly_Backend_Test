@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 
-mongoose.connect("mongodb+srv://EF13:1313@cluster0.fk4x7.gcp.mongodb.net/vehicles_databse", {useNewUrlParser:true});
+mongoose.connect("mongodb+srv://EF13:1313@cluster0.fk4x7.gcp.mongodb.net/vehicles_databse", {useNewUrlParser: true, useUnifiedTopology: true});
 mongoose.set("useCreateIndex", true);
 
 app.use(session({
