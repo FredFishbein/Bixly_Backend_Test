@@ -30,6 +30,7 @@ The following json payloads are accessible from /cars /boats /trucks
 The /:id is by Make.
 
 Making POST requests, PUT and DELETING are available through Postman.
+I was finding it rather difficut to get a solution to getting a token for Postman to access These methods once the route was protected. Any solutions to this?
 
 Specifications:
 
