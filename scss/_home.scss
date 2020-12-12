@@ -1,11 +1,9 @@
  body{
    background-color: rgb(61, 61, 59);
  }
- 
  h2, h3, p {
   color:rgb(192, 112, 21); 
 }
-
 h4{
   color:white;
   text-align: center;
@@ -16,26 +14,20 @@ h5{
   text-align: center;
   padding-top: 8px; 
 }
-
 .topLogo{
     padding-top:0;
-
 }
-
-
-
 .vehicleSelections_Button{
     margin-left:80px
 }
-
 #modalButton1{
-    margin-bottom:30px;
-    
+    margin-bottom:30px;   
 }
 #grayBackgroundColumnLeft{
     border-radius:15px;
-    
-
+}
+#grayBackgroundColumnRight{
+    border-radius:15px;
 }
 
   /* Create two equal columns that floats next to each other */

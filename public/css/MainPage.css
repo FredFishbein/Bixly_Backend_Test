@@ -84,6 +84,14 @@ input:focus {
   color: black;
 }
 
+.registerText {
+  margin-top: 40px;
+}
+
+.signUpText {
+  margin-top: 30px;
+}
+
 body {
   background-color: #3d3d3b;
 }
@@ -117,6 +125,10 @@ h5 {
 }
 
 #grayBackgroundColumnLeft {
+  border-radius: 15px;
+}
+
+#grayBackgroundColumnRight {
   border-radius: 15px;
 }
 
