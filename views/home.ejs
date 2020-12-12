@@ -1,0 +1,36 @@
+<%- include('partials/header') %>
+<%- include('navbar') %>
+
+<div class="jumbotron text-center topLogo">
+  <div class="container">
+   <img src= /images/logo.png height="170" /> 
+</div>
+<div class="d-flex">
+
+
+</div>
+<div class="row">
+  <div class="column" id="grayBackgroundColumnLeft" style="background-color:#393e46">
+    <h2>Where do you need to go?</h2>
+    <p>view our selection of vehicles</p>
+    <div class="dropdown mr-1">
+      <button type="button" class="btn btn-secondary dropdown-toggle" id="dropdownMenuOffset" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="10,20">
+        Vehicle Selections
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuOffset">
+        <a class="dropdown-item" href="/cars">Cars</a>
+        <a class="dropdown-item" href="/boats">Boats</a>
+        <a class="dropdown-item" href="/trucks">Trucks</a>
+        <a class="dropdown-item" href="/carInventory">Complete List</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+<a class="btn btn-dark btn-lg logoutButton" href="/logout" role="button">Log Out</a>
+
+<%- include('partials/footer') %>
+

@@ -1,0 +1,55 @@
+<%- include('partials/header') %>
+<%- include('navbar') %>
+
+
+<table class="table table-dark">
+    <thead>
+      <tr>
+        <th scope="col">#ID</th>
+        <th scope="col">Make</th>
+        <th scope="col">Model</th>
+        <th scope="col">Year</th>
+        <th scop ="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <th scope ="row"> <% truckItems.forEach(function(item){ %>
+          <div class = "item">
+            <p><%=item._id%></p> 
+          </div>
+       <% }); %>
+      </th>
+      <td> <% truckItems.forEach(function(item){ %>
+          <div class = "item">
+            <p><%=item.make%></p> 
+          </div>
+       <% }); %>
+      </td>
+      <td> <% truckItems.forEach(function(item){ %>
+          <div class = "item">
+            <p><%=item.model%></p> 
+          </div>
+       <% }); %>
+      </td>
+      <td> <% truckItems.forEach(function(item){ %>
+          <div class = "item"> 
+            <p><%=item.year%></p>
+          </div>
+       <% }); %>
+      </td>
+      <td> <% truckItems.forEach(function(item){ %>
+          <form action="/delete2" method ="post">
+            <div class ="item">
+              <p><input type="checkbox" name="checkboxForTruck" value ="<%=item._id%>" onChange="this.form.submit()"> (PERMANENT) <%=item.make%> <%=item._id%></p> 
+            </div>
+          </form>
+        <% }) %>
+      </td> 
+    </tr>
+  </tbody>
+  </table>
+  
+  <a class="btn btn-dark btn-lg logoutButton" href="/logout" role="button">Log Out</a>
+
+<%- include('partials/footer') %>

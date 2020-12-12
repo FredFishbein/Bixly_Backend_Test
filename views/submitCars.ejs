@@ -1,0 +1,43 @@
+<%- include("Partials/header")-%>
+
+
+<div class="container-xl">
+	<div class="row">
+		<div class="col-md-8 mx-auto">
+			<div class="contact-form">
+				<h1>Add to Inventory </h1>
+				<p class="hint-text"></p>
+				<form action="/submitCars" method="POST">
+					<div class="row">
+						<div class="col-sm-6">
+							<div class="form-group leftFormGroup">
+								<label for="inputMake">Make</label>
+                                <input type="text" name ="inputMake"class="form-control" id="inputMake" required>
+                                <label for="inputModel">Model</label>
+                                <input type="text" name ="inputModel"class="form-control" id="inputModel" required>
+                                <label for="inputYear">Year</label>
+                                <input type="text" name ="inputYear" class="form-control" id="inputYear" required>
+                                <label for="inputSeats">Seats</label>
+                                <input type="text" name ="inputSeats" class="form-control" id="inputSeats" required>
+                                <label for="inputColor">Color</label>
+                                <input type="text" name ="inputColor" class="form-control" id="inputColor" required>
+                                <label for="inputVin">Vin</label>
+                                <input type="text" name ="inputVin" class="form-control" id="inputVin" required>
+                                <label for="inputCurrent_Mileage">Current Mileage</label>
+                                <input type="text" name ="inputCurrent_Mileage" class="form-control" id="inputCurrent_Mileage" required>
+                                <label for="inputService_Interval">Service Interval</label>
+                                <input type="text" name ="inputService_Interval" class="form-control" id="inputService_Interval" required>
+                                <label for="inputNext_Service">Next Service</label>
+                                <input type="text" name ="inputNext_Service" class="form-control" id="inputNext_Service" required>
+							</div>
+						</div>         
+					<input type="submit" class="btn btn-primary btn-lg btn-block" value="Submit">
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+

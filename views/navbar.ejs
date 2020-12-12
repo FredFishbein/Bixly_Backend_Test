@@ -1,0 +1,134 @@
+<%- include('partials/header') %>
+
+
+<nav class="navbar navbar-icon-top navbar-expand-lg navbar-dark bg-dark ">
+  <a class="navbar-brand" href="home"><img src= /images/logo.png height="60" /></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="home">
+          <img src="https://img.icons8.com/plasticine/100/000000/garage-door-part-open.png" height= "40"/>
+          Home
+          <span class="sr-only">(current)</span>
+          </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <img src="https://img.icons8.com/fluent/96/000000/car.png" height= "36"/>
+          </i>
+        </a>
+        <div class="dropdown-menu carDropMenu " aria-labelledby="navbarDropdown">
+          
+          <a class="dropdown-item" href="">Pre-owned</a>
+          <a class="dropdown-item" href="">New</a>
+          <a class="dropdown-item" href="">Rentals</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="carInventory">Cars Inventory</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <img src="https://img.icons8.com/fluent/96/000000/car-service.png" height= "40"/>
+          </i>
+        </a>
+        <div class="dropdown-menu carDropMenu " aria-labelledby="navbarDropdown">
+          
+          <a class="dropdown-item" href="">Car Repair</a>
+          <a class="dropdown-item" href="">Truck Repair</a>
+          <a class="dropdown-item" href="">Boat Repair</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href=""> Repair Specs</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <img src="https://img.icons8.com/color/48/000000/pickup-front-view.png" height= "40"/>          </i>
+        </a>
+        <div class="dropdown-menu truckDropMenu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="">Trucks</a>
+          <a class="dropdown-item" href="">Pre-owned</a>
+          <a class="dropdown-item" href="">New</a>
+          <a class="dropdown-item" href="">Rentals</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="truckInventory">Trucks Inventory</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <img src="https://img.icons8.com/officel/80/000000/ship-wheel.png" height= "40"/>
+          </i>
+        </a>
+        <div class="dropdown-menu boatDropMenu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="boats">Boats</a>
+          
+          <a class="dropdown-item" href="">Pre-owned</a>
+          <a class="dropdown-item" href="">New</a>
+          <a class="dropdown-item" href="">Rentals</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="boatInventory">Boats Inventory</a>
+        </div>
+      </li>
+      <div class = "IntroHeaderOnNavbar">
+        <h5> Welcome, Sammy @ The Monkey Wrench Garage</h5>
+        </div>
+    </ul>
+    
+    <ul class="navbar-nav ">
+      <li class="nav-item">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <img src="https://img.icons8.com/dusk/64/000000/password-check.png" height= "37"/>
+          </i>
+        </a>
+        <div class="dropdown-menu adminDropMenu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="">User Management</a>
+          <a class="dropdown-item" href="">Billing</a>
+          <a class="dropdown-item" href="">Sales</a>
+          <a class="dropdown-item" href="">After Market Sales</a>
+          <a class="dropdown-item" href="">Time Sheets</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="">Billing Inventory</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <img src="https://img.icons8.com/color/96/000000/google-alerts.png" height= "40"/>
+            <span class="badge badge-info">11</span>
+          </i>
+        </a>
+        <div class="dropdown-menu adminDropMenu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="">My Notifications</a>
+          <a class="dropdown-item" href=""> My Emails</a>
+          <a class="dropdown-item" href="">My Contacts</a>
+          <a class="dropdown-item" href=""></a>
+          <a class="dropdown-item" href=""></a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href=""></a>
+        </div>
+      </li>
+      <li class="nav-item pickupPointIconNavBar">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <img src="https://img.icons8.com/cotton/64/000000/pickup-point.png" height= "40"/>
+            <span class="badge badge-danger">5</span>
+          </i>
+        </a>
+        <div class="dropdown-menu adminDropMenu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="">My Pickups</a>
+          <a class="dropdown-item" href=""> My Drop Offs</a>
+          <a class="dropdown-item" href="">My Drivers</a>
+          <a class="dropdown-item" href=""></a>
+          <a class="dropdown-item" href=""></a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="">Track My Car</a>
+        </div>
+      </li>
+    </ul>
+    <form action="/navbar" method="POST"class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="text" name ="inputMake" placeholder="Search Inventory" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
