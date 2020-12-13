@@ -1,9 +1,11 @@
 <%- include('partials/header') %>
 <%- include('navbar') %>
 
-<iframe style="background: #21313C;border: none;margin-left:20px; margin-bottom:20px; margin-top:25px;border-radius: 15px;box-shadow: 0 2px 10px 0 rgba(70, 76, 79, .2);" width="520" height="340" src="https://charts.mongodb.com/charts-project-0-btbvr/embed/charts?id=986cdedf-e9e6-4fd0-affa-69abd10b539b&autoRefresh=3600&theme=dark"></iframe>
-<iframe style="background: #21313C;border: none;margin-left:20px; margin-bottom:20px; margin-top:25px; border-radius: 15px;box-shadow: 0 2px 10px 0 rgba(70, 76, 79, .2);" width="520" height="340" src="https://charts.mongodb.com/charts-project-0-btbvr/embed/charts?id=bb4be7fa-a343-474c-b36a-ed68374d7b0f&theme=dark"></iframe>
-
+<div class = "introHeaderOnNavbarCarInventory">
+  <h5> Welcome, Sammy @ The Monkey Wrench Garage</h5>
+  </div>
+<iframe id ="topIframe" style="background: #21313C;border: none;margin-left:20px; margin-bottom:20px; margin-top:65px;border-radius: 15px;box-shadow: 0 2px 10px 0 rgba(70, 76, 79, .2);" width="480" height="340" src="https://charts.mongodb.com/charts-project-0-btbvr/embed/charts?id=986cdedf-e9e6-4fd0-affa-69abd10b539b&autoRefresh=3600&theme=dark"></iframe>
+<iframe id ="topIframe" style="background: #21313C;border: none;margin-left:20px; margin-bottom:20px; margin-top:65px; border-radius: 15px;box-shadow: 0 2px 10px 0 rgba(70, 76, 79, .2);" width="480" height="340" src="https://charts.mongodb.com/charts-project-0-btbvr/embed/charts?id=bb4be7fa-a343-474c-b36a-ed68374d7b0f&theme=dark"></iframe>
   
 <div class = "carHeader">
 <h4> Current Car Inventory</h4>
@@ -101,6 +103,13 @@
       </tr>
     </tbody>
   </table>
+  
+  <a class="btn btn-dark btn-lg logoutButton" href="/logout" role="button">Log Out</a>
+  <!-- <div class="midSection">
+    test
+  </div> -->
+
+<%- include('partials/footer') %>
 
    <!-- Modal 2 POST Form -->
    <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -156,9 +165,4 @@
     </div>
   </div> 
   
-  <a class="btn btn-dark btn-lg logoutButton" href="/logout" role="button">Log Out</a>
-  <!-- <div class="midSection">
-    test
-  </div> -->
-
-<%- include('partials/footer') %>
+  
