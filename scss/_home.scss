@@ -8,6 +8,7 @@ h4{
   color:white;
   text-align: center;
   padding-top: 6px;
+  
 }
 h5{
   color:rgb(192, 112, 21);
@@ -101,9 +102,18 @@ h5{
 
     @media screen and (max-width:768px){
       .idRowInTable{
-          display:none;  
+          display:none; 
       }
       }
+.homeHeader{
+    width:180px;
+    height: 40px;
+    background-color:#26272b;
+    margin-top: 40px;
+    margin-left:20px;
+    border-radius: 10px;
+  
+}      
     
   .carHeader{
     width:280px;

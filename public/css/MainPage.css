@@ -204,6 +204,15 @@ h5 {
   }
 }
 
+.homeHeader {
+  width: 180px;
+  height: 40px;
+  background-color: #26272b;
+  margin-top: 40px;
+  margin-left: 20px;
+  border-radius: 10px;
+}
+
 .carHeader {
   width: 280px;
   height: 40px;
@@ -764,5 +773,28 @@ body {
 
 #rowHeight {
   padding-top: 4px;
+}
+
+.welcomeSection {
+  margin-top: 100px;
+  margin-left: 400px;
+}
+
+@media screen and (max-width: 1368px) {
+  .welcomeSection {
+    margin-top: 100px;
+    margin-left: 200px;
+  }
+}
+
+.buttonHome {
+  color: white;
+  width: 60%;
+  margin-left: 20%;
+  text-decoration: none;
+}
+
+#enter {
+  text-decoration: none;
 }
 /*# sourceMappingURL=MainPage.css.map */
