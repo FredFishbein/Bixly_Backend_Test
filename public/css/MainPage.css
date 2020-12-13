@@ -180,9 +180,21 @@ h5 {
   border-radius: 15px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1368px) {
   .tableCarInventory {
-    width: 90%;
+    width: 88%;
+  }
+}
+
+.tableTruckInventory {
+  margin-left: 20px;
+  width: 1700px;
+  border-radius: 15px;
+}
+
+@media screen and (max-width: 1368px) {
+  .tableTruckInventory {
+    width: 88%;
   }
 }
 
@@ -202,12 +214,21 @@ h5 {
   border-radius: 10px;
 }
 
+.truckHeader {
+  width: 280px;
+  height: 40px;
+  background-color: #26272b;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
 .IntroHeaderOnNavbar {
   width: 500px;
   height: 40px;
   background-color: #26272b;
   margin-top: 20px;
-  margin-left: 20px;
   margin-bottom: 20px;
   border-radius: 10px;
   margin-left: 60px;
@@ -221,6 +242,21 @@ h5 {
 
 .pickupPointIconNavBar {
   padding-right: 20px;
+}
+
+.backgroundForButtonsAboveTable {
+  width: 520px;
+  height: 60px;
+  background-color: #26272b;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+#modalButton3 {
+  margin-top: 10px;
+  margin-left: 10px;
 }
 
 .navbar-icon-top .navbar-nav .nav-link > .fa {
@@ -332,29 +368,74 @@ h5 {
 .carDropMenu {
   left: 200px;
   width: 300px;
-  top: 85px;
+  top: 95px;
   border-radius: 10px;
+}
+
+@media screen and (max-width: 1026px) {
+  .carDropMenu {
+    left: 200px;
+    width: 300px;
+    top: 85px;
+    border-radius: 10px;
+  }
 }
 
 .truckDropMenu {
   left: 260px;
   width: 300px;
-  top: 85px;
+  top: 95px;
   border-radius: 10px;
+}
+
+@media screen and (max-width: 1026px) {
+  .truckDropMenu {
+    left: 260px;
+    width: 300px;
+    top: 85px;
+    border-radius: 10px;
+  }
 }
 
 .boatDropMenu {
   left: 350px;
   width: 300px;
-  top: 85px;
+  top: 95px;
   border-radius: 10px;
+}
+
+@media screen and (max-width: 1026px) {
+  .boatDropMenu {
+    left: 350px;
+    width: 300px;
+    top: 85px;
+    border-radius: 10px;
+  }
 }
 
 .adminDropMenu {
   left: 1100px;
   width: 300px;
-  top: 85px;
   border-radius: 10px;
+  top: 95px;
+}
+
+@media screen and (max-width: 1370px) {
+  .adminDropMenu {
+    left: 1000px;
+    width: 300px;
+    top: 95px;
+    border-radius: 10px;
+  }
+}
+
+@media screen and (max-width: 1026px) {
+  .adminDropMenu {
+    left: 700px;
+    width: 300px;
+    top: 85px;
+    border-radius: 10px;
+  }
 }
 
 @media screen and (max-width: 1367px) {
@@ -365,7 +446,7 @@ h5 {
 
 .site-footer {
   background-color: #26272b;
-  padding: 100px 0 100px;
+  padding: 50px 0 50px;
   font-size: 15px;
   line-height: 24px;
   color: #737373;

@@ -116,27 +116,68 @@
 .carDropMenu{
   left:200px;
   width:300px;
-  top:85px;
+  top:95px;
   border-radius: 10px;
 }
+@media screen and (max-width:1026px){
+  .carDropMenu{
+      left:200px; 
+      width:300px;
+      top:85px;
+      border-radius: 10px; 
+  }
+  }
 .truckDropMenu{
   left:260px;
   width:300px;
-  top:85px;
+  top:95px;
   border-radius: 10px;
 }
+@media screen and (max-width:1026px){
+  .truckDropMenu{
+      left:260px; 
+      width:300px;
+      top:85px;
+      border-radius: 10px; 
+  }
+  }
 .boatDropMenu{
   left:350px;
   width:300px;
-  top:85px;
+  top:95px;
   border-radius: 10px;
 }
+@media screen and (max-width:1026px){
+  .boatDropMenu{
+      left:350px; 
+      width:300px;
+      top:85px;
+      border-radius: 10px; 
+  }
+  }
 .adminDropMenu{
   left:1100px;
   width:300px;
-  top:85px;
   border-radius: 10px;
+  top:95px;
 }
+@media screen and (max-width:1370px){
+  .adminDropMenu{
+      left:1000px; 
+      width:300px;
+      top:95px;
+      border-radius: 10px; 
+  }
+  }
+  @media screen and (max-width:1026px){
+    .adminDropMenu{
+        left:700px; 
+        width:300px;
+        top:85px;
+        border-radius: 10px; 
+    }
+    }
+  
 
 @media screen and (max-width:1367px){
   #inputForm{

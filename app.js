@@ -49,6 +49,7 @@ const carsSchema = {
     current_mileage: String,
     service_interval: String,
     next_service: String,
+    annual_sales:Number,
 };
 const trucksSchema = {
     id:String,
@@ -61,6 +62,8 @@ const trucksSchema = {
     vin:String,
     current_mileage:String,
     service_interval:String,
+    next_service:String,
+    annual_sales:Number,
 }
 
 const boatsSchema ={
@@ -70,9 +73,10 @@ const boatsSchema ={
     length:String,
     width:String,
     hin:String,
-    current_hours:String,
+    current_hours:Number,
     service_Interval:String,
     next_service:String,
+    annual_sales:Number,
 }
 
 const userSchema = new mongoose.Schema({
@@ -112,6 +116,7 @@ passport.use(new GoogleStrategy({
     clientID: process.env.CLIENT_ID,
     clientSecret: process.env.CLIENT_SECRET,
     callbackURL: "https://safe-escarpment-24838.herokuapp.com/auth/google/cars",
+    // callbackURL: "http://localhost:3000/auth/google/cars",
     userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo",
   },
   function(accessToken, refreshToken, profile, cb) {
@@ -347,7 +352,8 @@ app.post("/submitCars", function (req, res) {
         vin:req.body.inputVin,
         current_mileage:req.body.inputCurrent_Mileage,
         service_interval:req.body.inputService_Interval,
-        next_service:req.body.inputNext_Service
+        next_service:req.body.inputNext_Service,
+        annual_sales:req.body.inputAnnual_Sales
     });
     newCar.save();
     res.redirect("cars");
@@ -476,10 +482,25 @@ app.post("/submitTrucks", function (req, res) {
       vin:req.body.inputVin,
       current_mileage:req.body.inputCurrentMileage,
       service_interval:req.body.inputServiceInterval,
+      next_service:req.body.inputNextService,
       
   });
   newTruck.save();
-  res.redirect("trucks");
+  res.redirect("truckInventory");
+});
+
+app.post("/deleteForTruck", function(req,res){
+  console.log(req.body);
+  const checkedItemId =(req.body.deleteButtonForTrucks);
+
+Truck.findOneAndDelete(checkedItemId,function(err){
+  
+  if (err){
+    console.log(err);
+    }else{
+      res.redirect("/truckInventory");
+    }   
+  });
 });
 
 

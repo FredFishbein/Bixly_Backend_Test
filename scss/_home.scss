@@ -76,16 +76,28 @@ h5{
     margin-bottom: 20px;
   }
 
-  .tableCarInventory{
+.tableCarInventory{
     margin-left: 20px;
     width:1700px;
     border-radius: 15px;
   }
-  @media screen and (max-width:768px){
+  @media screen and (max-width:1368px){
     .tableCarInventory{
-        width:90%;  
+        width:88%;  
     }
     }
+.tableTruckInventory{
+   margin-left: 20px;
+   width:1700px;
+   border-radius: 15px;
+}
+
+@media screen and (max-width:1368px){
+  .tableTruckInventory{
+      width:88%;  
+  }
+  }
+
     @media screen and (max-width:768px){
       .idRowInTable{
           display:none;  
@@ -101,13 +113,22 @@ h5{
     margin-bottom: 20px;
     border-radius: 10px;
   }
+  .truckHeader{
+    width:280px;
+    height: 40px;
+    background-color:#26272b;
+    margin-top: 20px;
+    margin-left:20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+  }
   
   .IntroHeaderOnNavbar{
     width:500px;
     height: 40px;
     background-color:#26272b;
     margin-top: 20px;
-    margin-left:20px;
+    
     margin-bottom: 20px;
     border-radius: 10px;
     margin-left: 60px;
@@ -121,7 +142,19 @@ h5{
     padding-right: 20px;
   }
 
-
+  .backgroundForButtonsAboveTable{
+    width:520px;
+    height: 60px;
+    background-color:#26272b;
+    margin-top: 20px;
+    margin-left:20px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+  }
+  #modalButton3{
+    margin-top: 10px;
+    margin-left: 10px;
+  }
 
 
   
