@@ -116,7 +116,7 @@ passport.deserializeUser(function(id, done) {
 passport.use(new GoogleStrategy({
     clientID: process.env.CLIENT_ID,
     clientSecret: process.env.CLIENT_SECRET,
-       callbackURL: "http://www.fredsgarages.com/home",
+       callbackURL: "http://www.fredsgarages.com/auth/google/home",
     // callbackURL: "https://safe-escarpment-24838.herokuapp.com/auth/google/cars",
     // callbackURL: "http://localhost:3000/auth/google/cars",
     userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo",
@@ -140,11 +140,11 @@ app.get("/", function(req,res){
     res.render("garage");
 });
 
-app.get("/home", 
+app.get("/auth/google", 
     passport.authenticate('google',{ scope:["profile"] })
 );
 
-app.get("/home", 
+app.get("/auth/google/home", 
     passport.authenticate('google', { failureRedirect: '/login' }),
     function(req, res) {
     // Successful authentication, redirect home.
