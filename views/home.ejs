@@ -8,7 +8,7 @@
   <div class = "introHeaderOnNavbarCarInventory">
     <%users.forEach(function(user,index,array){%>
       <%if(index === array.length -1) {%>
-   <h5> Welcome, <%=user.displayName%><%user.username%></h5>
+   <h5> Welcome, <%=user.username%><%=user.displayName%></h5>
     <%}%>
    <% }) %>
   </div>
