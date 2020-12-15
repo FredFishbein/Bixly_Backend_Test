@@ -116,7 +116,7 @@ passport.deserializeUser(function(id, done) {
 passport.use(new GoogleStrategy({
     clientID: process.env.CLIENT_ID,
     clientSecret: process.env.CLIENT_SECRET,
-    callbackURL: "https://fredsgarages.com/auth/google/cars",
+    callbackURL: "https://www.fredsgarages.com/auth/google/cars",
     // callbackURL: "https://safe-escarpment-24838.herokuapp.com/auth/google/cars",
     // callbackURL: "http://localhost:3000/auth/google/cars",
     userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo",
