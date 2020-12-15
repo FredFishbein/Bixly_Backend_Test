@@ -2,8 +2,12 @@
 <%- include('navbar') %>
 
 <div class = "introHeaderOnNavbarCarInventory">
-  <h5> Welcome, Sammy @ The Monkey Wrench Garage</h5>
-  </div>
+  <%users.forEach(function(user,index,array){%>
+    <%if(index === array.length -1) {%>
+ <h5> Welcome, <%=user.displayName%><%user.username%></h5>
+  <%}%>
+ <% }) %>
+</div>
 <iframe id ="topIframe" style="background: #21313C;border: none;margin-left:20px; margin-bottom:20px; margin-top:65px;border-radius: 15px;box-shadow: 0 2px 10px 0 rgba(70, 76, 79, .2);" width="480" height="340" src="https://charts.mongodb.com/charts-project-0-btbvr/embed/charts?id=986cdedf-e9e6-4fd0-affa-69abd10b539b&autoRefresh=3600&theme=dark"></iframe>
 <iframe id ="topIframe" style="background: #21313C;border: none;margin-left:20px; margin-bottom:20px; margin-top:65px; border-radius: 15px;box-shadow: 0 2px 10px 0 rgba(70, 76, 79, .2);" width="480" height="340" src="https://charts.mongodb.com/charts-project-0-btbvr/embed/charts?id=bb4be7fa-a343-474c-b36a-ed68374d7b0f&theme=dark"></iframe>
   

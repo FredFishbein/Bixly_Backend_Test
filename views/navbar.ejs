@@ -73,9 +73,15 @@
         </div>
       </li>
       <div class = "IntroHeaderOnNavbar">
-        <h5> Welcome, Sammy @ The Monkey Wrench Garage</h5>
-        </div>
+        <%users.forEach(function(user,index,array){%>
+          <%if(index === array.length -1) {%>
+       <h5> Welcome, <%=user.username%><%=user.displayName%></h5>
+        <%}%>
+       <% }) %>
+      </div>
+        
     </ul>
+   
     
     <ul class="navbar-nav ">
       <li class="nav-item">

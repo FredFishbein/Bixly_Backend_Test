@@ -17,11 +17,9 @@ const app = express();
 
 app.use(express.static("public"));
 
-
 app.set('view engine', 'ejs');
 
-app.use(bodyParser.urlencoded({
-  extended: true
+app.use(bodyParser.urlencoded({extended: true
 }));
 app.use(session({
   secret: process.env.SECRET,
@@ -85,6 +83,9 @@ const userSchema = new mongoose.Schema({
     googleId:String
 });
 
+///////////DYNAMIC USERNAME///////////////
+let users = [];
+
 
 //Plugins
 userSchema.plugin(findOrCreate);
@@ -115,34 +116,39 @@ passport.deserializeUser(function(id, done) {
 passport.use(new GoogleStrategy({
     clientID: process.env.CLIENT_ID,
     clientSecret: process.env.CLIENT_SECRET,
-    callbackURL: "https://safe-escarpment-24838.herokuapp.com/auth/google/cars",
-    // callbackURL: "http://localhost:3000/auth/google/cars",
+    // callbackURL: "https://safe-escarpment-24838.herokuapp.com/auth/google/cars",
+    callbackURL: "http://localhost:3000/auth/google/cars",
     userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo",
   },
   function(accessToken, refreshToken, profile, cb) {
-      console.log(profile);
+      const googleProfile = profile;
+      users.push(googleProfile);
+      
+      
 
     User.findOrCreate({ googleId: profile.id }, function (err, user) {
-      return cb(err, user);
+    return cb(err, user);
     });
   }
 ));
 
+ 
 ////////////////// LOGIN SECTION ///////////////////////
 
 app.get("/", function(req,res){
-  res.render("garage");
+    res.render("garage");
 });
 
-app.get("/auth/google",
+app.get("/auth/google", 
     passport.authenticate('google',{ scope:["profile"] })
 );
 
 app.get("/auth/google/cars", 
-  passport.authenticate('google', { failureRedirect: '/login' }),
-  function(req, res) {
+    passport.authenticate('google', { failureRedirect: '/login' }),
+    function(req, res) {
     // Successful authentication, redirect home.
     res.redirect("/home");
+    
   });
 
 app.get("/login", function(req,res){
@@ -154,29 +160,30 @@ app.get("/register", function(req,res){
 
 
 app.get("/home", function(req, res){
-        if(req.isAuthenticated()){
-      Car.find({
-          make:"Tesla",
-          make:"Jeep",
-      }, function(err,foundCar){
-          res.render("home", {carItems:foundCar});
-     
-             });
-           };
-        });
+    if(req.isAuthenticated()){
+         
+Car.find({
+    make:"Tesla",
+    make:"Jeep",
+ }, function(err,foundCar){
+    res.render("home", {carItems:foundCar,users:users});
+    });
+  };
+});
 
+       
 app.get("/carInventory", function(req, res){
-        if(req.isAuthenticated()){
-        Car.find({}, function(err,foundCar){
-          res.render("carInventory", {carItems:foundCar});
-     
-             });
-           };
-        });   
+    if(req.isAuthenticated()){
+    Car.find({}, function(err,foundCar){
+    res.render("carInventory", {carItems:foundCar,users:users});
+     });
+  };
+});   
+
 app.get("/truckInventory", function(req, res){
         if(req.isAuthenticated()){
         Truck.find({}, function(err,foundTruck){
-          res.render("truckInventory", {truckItems:foundTruck});
+          res.render("truckInventory", {truckItems:foundTruck,users:users});
        
              });
            };
@@ -184,7 +191,7 @@ app.get("/truckInventory", function(req, res){
 app.get("/boatInventory", function(req, res){
         if(req.isAuthenticated()){
         Boat.find({}, function(err,foundBoat){
-            res.render("boatInventory", {boatItems:foundBoat});
+            res.render("boatInventory", {boatItems:foundBoat,users:users});
          
                });
              };
@@ -226,13 +233,19 @@ app.get("/submitCars", function(req, res){
 
 
 app.post("/login", function(req, res){
-
   const user = new User({
     username: req.body.username,
-    password: req.body.password
+    password: req.body.password,
   });
+  users.push(user);
+  
+  
 
-    req.login(user, function(err){
+  
+
+
+
+req.login(user, function(err){
       if (err) {
         console.log(err);
       } else {
@@ -244,36 +257,35 @@ app.post("/login", function(req, res){
   
   });
 
-  app.get("/logout",function(req,res){
+app.get("/logout",function(req,res){
     req.logout();
     res.redirect("/");
   });
 
-
-
-  app.post("/register", function(req, res){
+app.post("/register", function(req, res){
 
     User.register({username: req.body.username}, req.body.password, function(err, user){
       if (err) {
         console.log(err);
-        res.redirect("/register");
+        res.redirect("/login");
       } else {
-        passport.authenticate("local")(req, res, function(){
-          res.redirect("/home");
-        });
+      //   passport.authenticate("local")(req, res, function(){
+          res.redirect("/login");
+        // });
       }
     });
-  
   });
 
-  app.post("/login", function(req,res){
-
+app.post("/login", function(req,res){
     const user = new User({
       username:req.body.username,
-      password:req.body.password
-    });
+      password:req.body.password,
+      
+      
+});
+    
 
-    req.login(user, function(err){
+req.login(user, function(err){
       if (err){
         console.log(err)
       } else {
@@ -340,7 +352,7 @@ Car.find({make: "Tesla"},function(err,foundCar){
 
 ///////////////// REQUESTS TARGETING ALL CARS (GET/POST) ////////////////////////
 
-
+app.route("/cars")
 app.post("/submitCars", function (req, res) {
 
     const newCar = new Car({
@@ -356,7 +368,7 @@ app.post("/submitCars", function (req, res) {
         annual_sales:req.body.inputAnnual_Sales
     });
     newCar.save();
-    res.redirect("cars");
+    res.redirect("carInventory");
 });
 
 
