@@ -1,26 +1,24 @@
 <%- include('partials/header') %>
 <%- include('navbar') %>
+<%- include('sidenavbar') %>
 
-<div class = "homeHeader">
-  <h4>HOME</h4>
-  </div>
-  
-  <div class = "introHeaderOnNavbarCarInventory">
-    <%users.forEach(function(user,index,array){%>
-      <%if(index === array.length -1) {%>
-   <h5> Welcome, <%=user.username%><%=user.displayName%></h5>
-    <%}%>
-   <% }) %>
-  </div>
+<div class = "introHeaderOnNavbarCarInventory">
+  <%users.forEach(function(user,index,array){%>
+    <%if(index === array.length -1) {%>
+ <h5> Welcome, <%=user.displayName%><%user.username%></h5>
+  <%}%>
+ <% }) %>
+</div>
 
-  
-   
+<div id = "iframe-group">
+<iframe id ="topIframeA" style="background: #212529;border: none;margin-left:120px; margin-bottom:20px; margin-top:25px; border-radius: 15px; box-shadow: 0 2px 10px 0 rgba(70, 76, 79, .2);" width="480" height="340" src="https://charts.mongodb.com/charts-project-0-btbvr/embed/charts?id=fa4b44f9-cbca-4df9-8991-6a6d4fe69154&autoRefresh=3600&theme=dark"></iframe>
+<iframe id ="topIframeB" style="background: #212529;border: none;margin-left:20px; margin-bottom:20px; margin-top:25px; border-radius: 15px; box-shadow: 0 2px 10px 0 rgba(70, 76, 79, .2);" width="480" height="340" src="https://charts.mongodb.com/charts-project-0-btbvr/embed/charts?id=bb4be7fa-a343-474c-b36a-ed68374d7b0f&theme=dark"></iframe>
+<iframe id ="topIframeC" style="background: #212529;border: none;margin-left:20px; margin-bottom:20px; margin-top:25px; border-radius: 15px; box-shadow: 0 2px 10px 0 rgba(70, 76, 79, .2);" width="480" height="340" src="https://charts.mongodb.com/charts-project-0-btbvr/embed/charts?id=bb4be7fa-a343-474c-b36a-ed68374d7b0f&theme=dark"></iframe>
+</div>
 
-
-<iframe id ="topIframe" style="background: #21313C;border: none;margin-left:20px; margin-bottom:20px; margin-top:65px;border-radius: 15px;box-shadow: 0 2px 10px 0 rgba(70, 76, 79, .2);" width="480" height="340" src="https://charts.mongodb.com/charts-project-0-btbvr/embed/charts?id=986cdedf-e9e6-4fd0-affa-69abd10b539b&autoRefresh=3600&theme=dark"></iframe>
-<iframe id ="topIframe" style="background: #21313C;border: none;margin-left:20px; margin-bottom:20px; margin-top:65px; border-radius: 15px;box-shadow: 0 2px 10px 0 rgba(70, 76, 79, .2);" width="480" height="340" src="https://charts.mongodb.com/charts-project-0-btbvr/embed/charts?id=bb4be7fa-a343-474c-b36a-ed68374d7b0f&theme=dark"></iframe>
-  
-
+<div class = "carHeader">
+<h4> Current Car Inventory</h4>
+</div>
 <div class = "backgroundForButtonsAboveTable">
   <button type="button" class="btn btn-primary" id = "modalButton3" data-toggle="modal" data-target="#exampleModal1">
     Launch Car Form
@@ -114,8 +112,62 @@
       </tr>
     </tbody>
   </table>
-
-<a class="btn btn-dark btn-lg logoutButton" href="/logout" role="button">Log Out</a>
+  
 
 <%- include('partials/footer') %>
 
+   <!-- Modal 2 POST Form -->
+   <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Car Inventory </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body"><div class="row">
+          <div class="col-md-8 mx-auto">
+            <div class="contact-form">
+              <h1>Form Information </h1>
+              <p class="hint-text"></p>
+              <form action="/submitCars" method="POST">
+                <div class="row">
+                  <div class="col-sm-12">
+                    <div class="form-group leftFormGroup">
+                      <label for="inputMake">Make</label>
+                                      <input type="text" name ="inputMake"class="form-control" id="inputMake" required>
+                                      <label for="inputModel">Model</label>
+                                      <input type="text" name ="inputModel"class="form-control" id="inputModel" required>
+                                      <label for="inputYear">Year</label>
+                                      <input type="text" name ="inputYear" class="form-control" id="inputYear" required>
+                                      <label for="inputSeats">Seats</label>
+                                      <input type="text" name ="inputSeats" class="form-control" id="inputSeats" required>
+                                      <label for="inputColor">Color</label>
+                                      <input type="text" name ="inputColor" class="form-control" id="inputColor" required>
+                                      <label for="inputVin">Vin</label>
+                                      <input type="text" name ="inputVin" class="form-control" id="inputVin" required>
+                                      <label for="inputCurrent_Mileage">Current Mileage</label>
+                                      <input type="text" name ="inputCurrent_Mileage" class="form-control" id="inputCurrent_Mileage" required>
+                                      <label for="inputService_Interval">Service Interval</label>
+                                      <input type="text" name ="inputService_Interval" class="form-control" id="inputService_Interval" required>
+                                      <label for="inputNext_Service">Next Service</label>
+                                      <input type="text" name ="inputNext_Service" class="form-control" id="inputNext_Service" required>
+                                      <label for="input">Annual Sales</label>
+                                      <input type="text" name ="inputAnnual_Sales" class="form-control" id="inputAnnual_Sales" required>
+                    </div>
+                  </div>         
+                <input type="submit" class="btn btn-primary btn-lg btn-block" value="Submit">
+              </form>
+            </div>
+          </div>
+        </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div> 
+  
+  

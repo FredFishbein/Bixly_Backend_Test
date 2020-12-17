@@ -1,157 +1,161 @@
- body{
-   background-color: rgb(61, 61, 59);
- }
- h2, h3, p {
-  color:rgb(212, 178, 139); 
-}
-h4{
-  color:white;
-  text-align: center;
-  padding-top: 6px;
-  
-}
-h5{
-  color:rgb(192, 112, 21);
-  text-align: center;
-  padding-top: 8px; 
-}
-.topLogo{
-    padding-top:0;
-}
-.vehicleSelections_Button{
-    margin-left:80px
-}
-#modalButton1{
-    margin-bottom:30px;   
-}
-#grayBackgroundColumnLeft{
-    border-radius:15px;
-}
-#grayBackgroundColumnRight{
-    border-radius:15px;
+body{
+background-color: rgb(61, 61, 59);
+color:rgb(159, 159, 168)
 }
 
-  /* Create two equal columns that floats next to each other */
-  .column {
-    float: left;
-    width: 50%;
-    padding: 10px;
-    height: 300px; /* Should be removed. Only for demonstration */
-  }
+h2, h3, p {
+color:rgb(212, 178, 139);
+}
+
+h4{
+color:white;
+text-align: center;
+padding-top: 6px; 
+}
+
+h5{
+color:rgb(192, 112, 21);
+text-align: center;
+padding-top: 8px; 
+}
+
+.topLogo{
+padding-top:0;
+}
+
+.vehicleSelections_Button{
+margin-left:80px
+}
+
+#modalButtons{
+margin-top:10px;
+margin-left:10px; 
+border-radius: 7px;  
+}
+
+
+  // /* Create two equal columns that floats next to each other */
+  // .column {
+  //   float: left;
+  //   width: 50%;
+  //   padding: 10px;
+  //   height: 300px; /* Should be removed. Only for demonstration */
+  // }
   
-  /* Clear floats after the columns */
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
+  // /* Clear floats after the columns */
+  // .row:after {
+  //   content: "";
+  //   display: table;
+  //   clear: both;
+  // }
 
 
 //   Modal Section
 
 .JeepModalOne{
-    padding-bottom:20px;
-    color:black;
-    border-radius: 30px;
-    border-bottom-left-radius: 55px;
-    border-bottom-right-radius: 55px;
-    height:260px;
-    width:auto
+padding-bottom:20px;
+color:black;
+border-radius: 30px;
+border-bottom-left-radius: 55px;
+border-bottom-right-radius: 55px;
+height:260px;
+width:auto
 }
 
-
-  .logoutButton{
-  
-  margin-left:20px;
-  margin-bottom:10px;
-  border-radius: 15px;
-  background-color:#26272b;
-  margin-top: 10px;
-  margin-bottom: 50px;
-  }
-
-  .midSection{
-    width:auto;
-    height: 400px;
-    background-color:#26272b;
-    margin-bottom: 20px;
-  }
+.logoutButton{
+margin-left:100px;
+margin-bottom:10px;
+border-radius: 15px;
+background-color:#26272b;
+margin-top: 10px;
+margin-bottom: 50px;
+}
 
 .tableCarInventory{
-    margin-left: 20px;
-    width:1700px;
-    border-radius: 15px;
+margin-left: 100px;
+width:92%;
+border-radius: 15px;
+margin-bottom: 100px;
+
 }
 @media screen and (max-width:1368px){
 .tableCarInventory{
-    width:96%;  
+width:90%;
+margin-left:40px;  
 }
 }
 
 .tableTruckInventory{
-   margin-left: 20px;
-   width:1700px;
-   border-radius: 15px;
+margin-left: 100px;
+width:92%;
+border-radius: 15px;
+margin-bottom: 100px;
 }
 
 @media screen and (max-width:1368px){
-  .tableTruckInventory{
-      width:88%;  
-  }
-  }
+.tableTruckInventory{
+width:88%;  
+}
+}
 
-    @media screen and (max-width:768px){
-      .idRowInTable{
-          display:none; 
-      }
-      }
+@media screen and (max-width:768px){
+.idRowInTable{
+display:none; 
+}
+}
+
 .homeHeader{
-    width:180px;
-    height: 40px;
-    background-color:#26272b;
-    margin-top: 40px;
-    margin-left:20px;
-    border-radius: 10px;
-  
+width:180px;
+height: 40px;
+background-color:#26272b;
+margin-top: 40px;
+margin-left:20px;
+border-radius: 10px; 
 }      
     
-  .carHeader{
-    width:280px;
-    height: 40px;
-    background-color:#26272b;
-    margin-top: 20px;
-    margin-left:20px;
-    margin-bottom: 20px;
-    border-radius: 10px;
-  }
-  .truckHeader{
-    width:280px;
-    height: 40px;
-    background-color:#26272b;
-    margin-top: 20px;
-    margin-left:20px;
-    margin-bottom: 20px;
-    border-radius: 10px;
-  }
+.carHeader{
+width:280px;
+height: 40px;
+background-color:#26272b;
+margin-top: 20px;
+margin-left:100px;
+margin-bottom: 20px;
+border-radius: 10px;
+}
+
+.truckHeader{
+width:280px;
+height: 40px;
+background-color:#26272b;
+margin-top: 20px;
+margin-left:100px;
+margin-bottom: 20px;
+border-radius: 10px;
+}
   
-  .pickupPointIconNavBar{
-    padding-right: 20px;
-  }
+.pickupPointIconNavBar{
+padding-right: 20px;
+}
 
-  .backgroundForButtonsAboveTable{
-    width:520px;
-    height: 60px;
-    background-color:#26272b;
-    margin-top: 20px;
-    margin-left:20px;
-    margin-bottom: 10px;
-    border-radius: 10px;
-  }
+.backgroundForButtonsAboveTable{
+width:520px;
+height: 60px;
+background-color:#212529;
+margin-top: 20px;
+margin-left:100px;
+margin-bottom: 10px;
+border-radius: 10px;
+}
 
-  #modalButton3{
-    margin-top: 10px;
-    margin-left: 10px;
-  }
+#modalButtons{
+margin-top: 10px;
+margin-left: 10px;
+background-color: rgb(100, 133, 152);
+border: none;
+}
+
+  
+    
 
 
   

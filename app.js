@@ -11,8 +11,6 @@ const findOrCreate = require('mongoose-findorcreate');
 // const myMapData = require(__dirname + "/gmaps.js");
 
 
-
-
 const app = express();
 
 app.use(express.static("public"));
@@ -116,9 +114,9 @@ passport.deserializeUser(function(id, done) {
 passport.use(new GoogleStrategy({
     clientID: process.env.CLIENT_ID,
     clientSecret: process.env.CLIENT_SECRET,
-       callbackURL: "http://www.fredsgarages.com/auth/google/home",
+      //  callbackURL: "http://www.fredsgarages.com/auth/google/home",
     // callbackURL: "https://safe-escarpment-24838.herokuapp.com/auth/google/cars",
-    // callbackURL: "http://localhost:3000/auth/google/cars",
+    callbackURL: "http://localhost:3000/auth/google/home",
     userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo",
   },
   function(accessToken, refreshToken, profile, cb) {
@@ -203,7 +201,7 @@ app.get("/cars", function(req, res){
         Car.find({
           make:"Tesla",
         }, function(err,foundCar){
-          res.render("cars", {carItems:foundCar});
+          res.render("cars", {carItems:foundCar,users:users});
        
              });
            };
@@ -306,9 +304,9 @@ app.route("/cars/:id")
 
 .get(function(req,res){
 
-Car.find({make: "Tesla"},function(err,foundCar){
+Car.find({_id: "5fd64c08f40061e4610e54ae"},function(err,foundCar){
     if (foundCar) {
-      res.render("tesla", {carItems:foundCar});
+      res.render("tesla", {carItems:foundCar,users:users});
     } else {
         res.send("No Cars matching that desciption") ;
         }
@@ -423,6 +421,8 @@ app.post("/delete3", function(req,res){
     }   
   });
 });
+
+
   
 
 
