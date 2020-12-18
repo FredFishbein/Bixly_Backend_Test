@@ -27,7 +27,7 @@ bottom:0;
 height:515px;
 border-radius: 0 15px 15px 0px;
 left:0;
-width:60px;
+width:80px;
 overflow:hidden;
 text-decoration:width .05s linear;
 transition:width .05s linear;
@@ -44,7 +44,7 @@ position:relative;
 display:block;
 width:250px;
 margin-top:10px;
-margin-left: 10px;
+margin-left: 20px;
 margin-bottom: 20px;
 }
 
@@ -117,7 +117,8 @@ padding:0;
 .main-menu li:hover>a,nav.main-menu li.active>a,.dropdown-menu>li>a:hover,.dropdown-menu>li>a:focus,.dropdown-menu>.active>a,.dropdown-menu>.active>a:hover,.dropdown-menu>.active>a:focus,.no-touch .dashboard-page nav.dashboard-menu ul li:hover a,.dashboard-page nav.dashboard-menu ul li.active a {
 color:#fff;
 background-color:#5fa2db;
-border-radius: 0 10px 10px 0;
+border-radius: 5px 5px;
+
 }
 .area {
 float: left;

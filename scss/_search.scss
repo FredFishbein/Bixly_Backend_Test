@@ -5,12 +5,13 @@
   width: 518px;
   height: 40px;
 
-  margin-left:100px;
+  margin-left:1100px;
   
   background: rgb(39, 38, 38);
   background: rgba(0,0,0,.2);
   border-radius:10px;
   border: 1px solid #fff;
+
   
   input {
     width: 370px;
@@ -50,3 +51,13 @@
     }
   }  
 }
+@media screen and (max-width:1450px){
+.search{
+margin-left:400px;
+}
+} 
+@media screen and (max-width:900px){
+.search{
+margin-left:200px;
+}
+} 

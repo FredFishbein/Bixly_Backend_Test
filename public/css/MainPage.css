@@ -101,13 +101,7 @@ h2, h3, p {
   color: #d4b28b;
 }
 
-h4 {
-  color: white;
-  text-align: center;
-  padding-top: 6px;
-}
-
-h5 {
+h4, h5 {
   color: #c07015;
   text-align: center;
   padding-top: 8px;
@@ -193,9 +187,21 @@ h5 {
   height: 40px;
   background-color: #26272b;
   margin-top: 20px;
-  margin-left: 100px;
+  margin-left: 700px;
   margin-bottom: 20px;
   border-radius: 10px;
+}
+
+@media screen and (max-width: 1200px) {
+  .carHeader {
+    width: 280px;
+    height: 40px;
+    background-color: #26272b;
+    margin-top: 20px;
+    margin-left: 300px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+  }
 }
 
 .truckHeader {
@@ -217,15 +223,39 @@ h5 {
   height: 60px;
   background-color: #212529;
   margin-top: 20px;
-  margin-left: 100px;
+  margin-left: 1100px;
   margin-bottom: 10px;
   border-radius: 10px;
+}
+
+@media screen and (max-width: 1450px) {
+  .backgroundForButtonsAboveTable {
+    width: 520px;
+    height: 60px;
+    background-color: #212529;
+    margin-top: 20px;
+    margin-left: 400px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .backgroundForButtonsAboveTable {
+    width: 520px;
+    height: 60px;
+    background-color: #212529;
+    margin-top: 20px;
+    margin-left: 200px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+  }
 }
 
 #modalButtons {
   margin-top: 10px;
   margin-left: 10px;
-  background-color: #648598;
+  background-color: #5fa2db;
   border: none;
 }
 
@@ -335,81 +365,8 @@ h5 {
   }
 }
 
-.carDropMenu {
-  left: 200px;
-  width: 300px;
-  top: 95px;
-  border-radius: 10px;
-}
-
-@media screen and (max-width: 1026px) {
-  .carDropMenu {
-    left: 200px;
-    width: 300px;
-    top: 85px;
-    border-radius: 10px;
-  }
-}
-
-.truckDropMenu {
-  left: 260px;
-  width: 300px;
-  top: 95px;
-  border-radius: 10px;
-}
-
-@media screen and (max-width: 1026px) {
-  .truckDropMenu {
-    left: 260px;
-    width: 300px;
-    top: 85px;
-    border-radius: 10px;
-  }
-}
-
-.boatDropMenu {
-  left: 350px;
-  width: 300px;
-  top: 95px;
-  border-radius: 10px;
-}
-
-@media screen and (max-width: 1026px) {
-  .boatDropMenu {
-    left: 350px;
-    width: 300px;
-    top: 85px;
-    border-radius: 10px;
-  }
-}
-
-.adminDropMenu {
-  left: 1100px;
-  width: 300px;
-  border-radius: 10px;
-  top: 95px;
-}
-
-@media screen and (max-width: 1370px) {
-  .adminDropMenu {
-    left: 1000px;
-    width: 300px;
-    top: 95px;
-    border-radius: 10px;
-  }
-}
-
-@media screen and (max-width: 1026px) {
-  .adminDropMenu {
-    left: 700px;
-    width: 300px;
-    top: 85px;
-    border-radius: 10px;
-  }
-}
-
 .IntroHeaderOnNavbar {
-  width: 500px;
+  width: 1000px;
   height: 40px;
   background-color: #26272b;
   margin-top: 20px;
@@ -418,40 +375,20 @@ h5 {
   margin-left: 60px;
 }
 
-@media screen and (max-width: 1025px) {
-  .IntroHeaderOnNavbar {
-    display: none;
-  }
-}
-
-.introHeaderOnNavbarCarInventory {
-  width: 500px;
-  height: 40px;
-  background-color: #26272b;
-  margin-top: 30px;
-  border-radius: 10px;
-  margin-left: 250px;
-}
-
-@media screen and (max-width: 780px) {
-  .introHeaderOnNavbarCarInventory {
-    width: 500px;
-    height: 40px;
-    background-color: #26272b;
-    margin-top: 50px;
-    border-radius: 10px;
-    margin-left: 150px;
-  }
-}
-
-@media screen and (min-width: 1027px) {
-  .introHeaderOnNavbarCarInventory {
-    display: none;
-  }
-}
-
 #cursorToHandInfoButton {
   cursor: pointer;
+}
+
+@media screen and (max-width: 1030px) {
+  #cursorToHandInfoButton {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1030px) {
+  #adminLinkIcon {
+    display: none;
+  }
 }
 
 .site-footer {
@@ -798,7 +735,13 @@ body {
 
 @media screen and (max-width: 1000px) {
   nav.main-menu {
-    top: 200px;
+    top: 115px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  nav.main-menu {
+    top: 190px;
   }
 }
 
@@ -831,7 +774,7 @@ body {
   height: 515px;
   border-radius: 0 15px 15px 0px;
   left: 0;
-  width: 60px;
+  width: 80px;
   overflow: hidden;
   -webkit-text-decoration: width .05s linear;
           text-decoration: width .05s linear;
@@ -850,7 +793,7 @@ body {
   display: block;
   width: 250px;
   margin-top: 10px;
-  margin-left: 10px;
+  margin-left: 20px;
   margin-bottom: 20px;
 }
 
@@ -925,7 +868,7 @@ nav ul, nav li {
 .main-menu li:hover > a, nav.main-menu li.active > a, .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus, .dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus, .no-touch .dashboard-page nav.dashboard-menu ul li:hover a, .dashboard-page nav.dashboard-menu ul li.active a {
   color: #fff;
   background-color: #5fa2db;
-  border-radius: 0 10px 10px 0;
+  border-radius: 5px 5px;
 }
 
 .area {
@@ -949,7 +892,7 @@ nav ul, nav li {
 .search {
   width: 518px;
   height: 40px;
-  margin-left: 100px;
+  margin-left: 1100px;
   background: #272626;
   background: rgba(0, 0, 0, 0.2);
   border-radius: 10px;
@@ -997,5 +940,25 @@ nav ul, nav li {
 
 .search button:focus {
   outline: 0;
+}
+
+@media screen and (max-width: 1450px) {
+  .search {
+    margin-left: 400px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .search {
+    margin-left: 200px;
+  }
+}
+
+#formInputs {
+  margin-bottom: 20px;
+}
+
+#modalMovetoCenter {
+  margin-right: 800px;
 }
 /*# sourceMappingURL=MainPage.css.map */

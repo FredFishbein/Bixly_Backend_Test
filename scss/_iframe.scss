@@ -1,26 +1,26 @@
 
 //   Large screens
 @media screen and (max-width:1630px){
-    #topIframeA{
-    width:400px;     
-    }
-    } 
-    @media screen and (max-width:1630px){
-    #topIframeB{
-    width:400px;     
-    }
-    } 
-    @media screen and (max-width:1615px){
-    #topIframeC{
-    display:none     
-    }
-    }
+#topIframeA{
+width:400px;     
+}
+} 
+@media screen and (max-width:1630px){
+#topIframeB{
+width:400px;     
+}
+} 
+@media screen and (max-width:1615px){
+#topIframeC{
+display:none     
+}
+}
 // Ipad and smaller screens // Adjusts the width of individual iframe
 @media screen and (max-width:1000px){
-    #topIframeA{
-    width:550px;    
-    }
-    } 
+#topIframeA{
+width:550px;    
+}
+} 
 // Ipad and smaller screens // Adjusts the margin of the group of iframe
 // @media screen and (max-width:1000px){
 //     #iframe-group{  
@@ -29,16 +29,19 @@
 //     } 
 //Ipad and smaller screens  Adjusts the height of left navbar
 @media screen and (max-width:1000px){
-    nav.main-menu {  
-    top:200px;   
-    }
-    } 
-
-
-    @media screen and (max-width:1000px){
-    #topIframeB{
-    display:none     
-    }
-    }
+ nav.main-menu {  
+ top:115px;   
+ }
+ } 
+ @media screen and (max-width:900px){
+nav.main-menu {  
+top:190px;   
+}
+}
+@media screen and (max-width:1000px){
+#topIframeB{
+display:none     
+}
+}
    
              

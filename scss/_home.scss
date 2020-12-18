@@ -7,13 +7,13 @@ h2, h3, p {
 color:rgb(212, 178, 139);
 }
 
-h4{
-color:white;
-text-align: center;
-padding-top: 6px; 
-}
+// h4,h5{
+// color:white;
+// text-align: center;
+// padding-top: 6px; 
+// }
 
-h5{
+h4,h5{
 color:rgb(192, 112, 21);
 text-align: center;
 padding-top: 8px; 
@@ -111,16 +111,28 @@ background-color:#26272b;
 margin-top: 40px;
 margin-left:20px;
 border-radius: 10px; 
-}      
+} 
+     
     
 .carHeader{
 width:280px;
 height: 40px;
 background-color:#26272b;
 margin-top: 20px;
-margin-left:100px;
+margin-left:700px;
 margin-bottom: 20px;
 border-radius: 10px;
+}
+@media screen and (max-width:1200px){
+.carHeader{
+width:280px;
+height: 40px;
+background-color:#26272b;
+margin-top: 20px;
+margin-left:300px;
+margin-bottom: 20px;
+border-radius: 10px; 
+}
 }
 
 .truckHeader{
@@ -142,15 +154,37 @@ width:520px;
 height: 60px;
 background-color:#212529;
 margin-top: 20px;
-margin-left:100px;
+margin-left:1100px;
 margin-bottom: 10px;
 border-radius: 10px;
+}
+@media screen and (max-width:1450px){
+.backgroundForButtonsAboveTable{
+width:520px;
+height: 60px;
+background-color:#212529;
+margin-top: 20px;
+margin-left:400px;
+margin-bottom: 10px;
+border-radius: 10px;  
+}
+}
+@media screen and (max-width:900px){
+.backgroundForButtonsAboveTable{
+width:520px;
+height: 60px;
+background-color:#212529;
+margin-top: 20px;
+margin-left:200px;
+margin-bottom: 10px;
+border-radius: 10px;  
+}
 }
 
 #modalButtons{
 margin-top: 10px;
 margin-left: 10px;
-background-color: rgb(100, 133, 152);
+background-color: #5fa2db;
 border: none;
 }
 

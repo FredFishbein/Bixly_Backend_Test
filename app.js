@@ -118,10 +118,12 @@ passport.use(new GoogleStrategy({
     // callbackURL: "https://safe-escarpment-24838.herokuapp.com/auth/google/cars",
     callbackURL: "http://localhost:3000/auth/google/home",
     userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo",
+
   },
   function(accessToken, refreshToken, profile, cb) {
       const googleProfile = profile;
       users.push(googleProfile);
+      console.log(googleProfile);
       
       
 
@@ -228,8 +230,25 @@ app.get("/submitCars", function(req, res){
              res.render("submitCars");
                 
              };
-          });         
-
+          });   
+app.get("/formsPage", function(req, res){
+       if(req.isAuthenticated()){
+       res.render("formsPage", {users:users});
+                
+             };
+          }); 
+app.get("/carServices", function(req, res){
+       if(req.isAuthenticated()){
+       res.render("carServices", {users:users});
+                
+             };
+          });                          
+app.get("/data", function(req, res){
+       if(req.isAuthenticated()){
+       res.render("data", {users:users});
+                
+             };
+          });
 
 app.post("/login", function(req, res){
   const user = new User({
@@ -238,11 +257,6 @@ app.post("/login", function(req, res){
   });
   users.push(user);
   
-  
-
-  
-
-
 
 req.login(user, function(err){
       if (err) {
@@ -304,7 +318,7 @@ app.route("/cars/:id")
 
 .get(function(req,res){
 
-Car.find({_id: "5fd64c08f40061e4610e54ae"},function(err,foundCar){
+Car.find({},function(err,foundCar){
     if (foundCar) {
       res.render("tesla", {carItems:foundCar,users:users});
     } else {
