@@ -961,4 +961,16 @@ nav ul, nav li {
 #modalMovetoCenter {
   margin-right: 800px;
 }
+
+@media screen and (max-width: 1100px) {
+  #modalMovetoCenter {
+    margin-left: 140px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  #modalMovetoCenter {
+    margin-left: 2px;
+  }
+}
 /*# sourceMappingURL=MainPage.css.map */
