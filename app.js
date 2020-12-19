@@ -161,22 +161,18 @@ app.get("/register", function(req,res){
 
 
 app.get("/home", function(req, res){
-    if(req.isAuthenticated()){
-         
-Car.find({
-    make:"Tesla",
-    make:"Jeep",
- }, function(err,foundCar){
+  if(req.isAuthenticated()){
+    Car.find({}, function(err,foundCar){
     res.render("home", {carItems:foundCar,users:users});
-    });
+     });
   };
 });
 
        
-app.get("/carInventory", function(req, res){
+app.get("/cars", function(req, res){
     if(req.isAuthenticated()){
     Car.find({}, function(err,foundCar){
-    res.render("carInventory", {carItems:foundCar,users:users});
+    res.render("cars", {carItems:foundCar,users:users});
      });
   };
 });   
@@ -198,16 +194,16 @@ app.get("/boatInventory", function(req, res){
              };
           });    
 
-app.get("/cars", function(req, res){
-        if(req.isAuthenticated()){
-        Car.find({
-          make:"Tesla",
-        }, function(err,foundCar){
-          res.render("cars", {carItems:foundCar,users:users});
+// app.get("/cars", function(req, res){
+//         if(req.isAuthenticated()){
+//         Car.find({
+//           make:"Tesla",
+//         }, function(err,foundCar){
+//           res.render("cars", {carItems:foundCar,users:users});
        
-             });
-           };
-        });        
+//              });
+//            };
+//         });        
     
 app.get("/boats", function(req, res){
        if(req.isAuthenticated()){
@@ -231,15 +227,15 @@ app.get("/submitCars", function(req, res){
                 
              };
           });   
-app.get("/formsPage", function(req, res){
+app.get("/forms", function(req, res){
        if(req.isAuthenticated()){
-       res.render("formsPage", {users:users});
+       res.render("forms", {users:users});
                 
              };
           }); 
-app.get("/carServices", function(req, res){
+app.get("/services", function(req, res){
        if(req.isAuthenticated()){
-       res.render("carServices", {users:users});
+       res.render("services", {users:users});
                 
              };
           });                          
@@ -367,7 +363,7 @@ Car.find({},function(err,foundCar){
 
 app.route("/cars")
 app.post("/submitCars", function (req, res) {
-
+  console.log(req.body);
     const newCar = new Car({
         make:req.body.inputMake,
         model:req.body.inputModel,
@@ -381,7 +377,7 @@ app.post("/submitCars", function (req, res) {
         annual_sales:req.body.inputAnnual_Sales
     });
     newCar.save();
-    res.redirect("carInventory");
+    res.redirect("cars");
 });
 
 
@@ -404,13 +400,14 @@ Car.findOneAndDelete(checkedItemId,function(err){
   if (err){
     console.log(err);
     }else{
-      res.redirect("/carInventory");
+      res.redirect("/cars");
     }   
   });
 });
 app.post("/delete2", function(req,res){
   const checkedItemId =(req.body.checkboxForTruck);
   console.log(req.body);
+
 
 
 Truck.findByIdAndRemove(checkedItemId,function(err){
@@ -436,7 +433,9 @@ app.post("/delete3", function(req,res){
   });
 });
 
-
+app.post("/searchCars", function(req,res){
+  console.log(req.body.searchInput);  
+});
   
 
 

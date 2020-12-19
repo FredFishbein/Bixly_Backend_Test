@@ -1,72 +1,144 @@
 <%- include('partials/header') %>
 <%- include('navbar') %>
+<%- include('sidenavbar') %>
 
-<div class="jumbotron text-center topLogo">
-  <div class="container">
-    <h1 class="display-3"><img src= /images/logo.png height="170" /> Vehicles Database</h1>
+
+<div id = "iframe-group">
+<iframe id ="topIframeA" style="background: #212529;border: none;margin-left:120px; margin-bottom:20px; margin-top:25px; border-radius: 15px; box-shadow: 0 2px 10px 0 rgba(70, 76, 79, .2);" width="480" height="340" src="https://charts.mongodb.com/charts-project-0-btbvr/embed/charts?id=fa4b44f9-cbca-4df9-8991-6a6d4fe69154&autoRefresh=3600&theme=dark"></iframe>
+<iframe id ="topIframeB" style="background: #212529;border: none;margin-left:20px; margin-bottom:20px; margin-top:25px; border-radius: 15px; box-shadow: 0 2px 10px 0 rgba(70, 76, 79, .2);" width="480" height="340" src="https://charts.mongodb.com/charts-project-0-btbvr/embed/charts?id=bb4be7fa-a343-474c-b36a-ed68374d7b0f&theme=dark"></iframe>
+<iframe id ="topIframeC" style="background: #212529;border: none;margin-left:20px; margin-bottom:20px; margin-top:25px; border-radius: 15px;box-shadow: 0 2px 10px 0 rgba(70, 76, 79, .2);" width="480" height="340" src="https://charts.mongodb.com/charts-project-0-btbvr/embed/charts?id=83029de4-6316-45cd-93d9-536aead38ce8&theme=dark"></iframe>
 </div>
-<div class="d-flex">
 
-
+<div class = "carHeader">
+<h4> Current Car Inventory</h4>
 </div>
-<div class="row">
-  <div class="column" id = "grayBackgroundColumnLeft" style="background-color:#393e46">
-    <h2>See what cars we have in stock.</h2>
-    <p>view our selection of cars</p>
-    <div class="dropdown mr-1">
-      <button type="button" class="btn btn-secondary dropdown-toggle" id="dropdownMenuOffset" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="10,20">
-        Car Selections
-      </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuOffset">
-        <a class="dropdown-item" href="/cars/Tesla">Tesla</a>
-        <a class="dropdown-item" href="/Ford">Ford</a>
-        <a class="dropdown-item" href="/Chevy">Chevy</a>
-      </div>
+
+<div class ="backgroundForButtonsAboveTable">
+  <div class="btn-group">
+    <button type="button" class="btn btn-primary" id="modalButtons" data-toggle="modal" data-target="#exampleModal1">Car Form</button>
+    <button type="button" class="btn btn-primary" id="modalButtons" data-toggle="modal" data-target="#exampleModal">Car Details</button>  
+      <select id="modalButtons" class ="btn btn-primary">
+        <option value="0">Select car:</option>
+        <option value="1">Audi</option>
+        <option value="2">BMW</option>
+        <option value="3">Citroen</option>
+        <option value="4">Ford</option>
+        <option value="5">Honda</option>
+        <option value="6">Jaguar</option>
+        <option value="7">Land Rover</option>
+        <option value="8">Mercedes</option>
+        <option value="9">Mini</option>
+        <option value="10">Nissan</option>
+        <option value="11">Toyota</option>
+        <option value="12">Volvo</option>
+      </select>
+      <select id="modalButtons" class ="form-control btn btn-primary">
+        <option value="0">Modify Cars</option>
+        <option value="1">Add</option>
+        <option value="2">Delete</option>
+        <option value="3" data-toggle="modal" data-target="#modalButtons">Update</option>
+      </select>
     </div>
   </div>
-  <div class="column" id = "grayBackgroundColumnRight" style="background-color:#393e46;">
-    <h2>See our Cars</h2>
-    <p>Specifications</p>
-    <button type="button" class="btn btn-primary" id="modalButton1"data-toggle="modal" data-target="#exampleModal">
-      Launch Car Details
-    </button>
-
-
-    <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Tesla </h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <img src = "images/tesla.jpg" class = "JeepModalOne" />
-          <% carItems.forEach(function(item){ %>
+  </div>
+  
+  <form action="/searchCars" class="search" method="POST">
+    <input type="text" id="searchInput" name="searchInput" placeholder="Search here..." required>
+    <button type="submit">Search</button>
+  </form> 
+  <table class="table table-dark tableCarInventory">
+  
+    <thead>
+      <tr>
+        <th class = "idRowInTable" scope="col">ID</th>
+        <th scope="col">Make</th>
+        <th scope="col">Model</th>
+        <th scope="col">Mileage</th>
+        <th scope="col">Year</th>
+        <th scope="col">Next Service</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class = "idRowInTable"> <% carItems.forEach(function(item){ %>
             <div class = "item">
-              <p>Make: <%=item.make%></p> 
-              <p>Model: <%=item.model%></p> 
-              <p>Mileage: <%=item.current_mileage%></p> 
-              <p>Year: <%=item.year%></p>
+              <p><%=item._id%></p> 
+            </div>
+          <% }); %>
+        </td>
+        <td> <% carItems.forEach(function(item){ %>
+            <div class = "item">
+              <p><%=item.make%></p> 
             </div>
          <% }); %>
-        
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <h2>Inventory form</h2>
-    <button type="button" class="btn btn-primary" id = "modalButton2" data-toggle="modal" data-target="#exampleModal2">
-      Launch Car Details
-    </button>
-    
-    <!-- Modal 2 POST Form -->
-  <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        </td>
+        <td> <% carItems.forEach(function(item){ %>
+          <div class = "item">
+            <p><%=item.model%></p> 
+          </div>
+       <% }); %>
+      </td>
+        <td> <% carItems.forEach(function(item){ %>
+          <div class = "item">
+            <p><%=item.current_mileage%></p> 
+          </div>
+         <% }); %>
+        </td>
+        <td> <% carItems.forEach(function(item){ %>
+          <div class = "item"> 
+          <p><%=item.year%></p>
+          </div>
+        <% }); %>
+        </td>
+        <td> <% carItems.forEach(function(item){ %>
+          <div class = "item"> 
+          <p><%=item.next_service%></p>
+          </div>
+        <% }); %>
+        </td>
+        <td> <% carItems.forEach(function(item){ %>
+          <div class ="item">
+                <button href="#myModal" type="button" name = "deleteButton" class="btn btn-danger deleteButton" data-toggle="modal">Delete</button>
+          </div>
+          <% }) %> 
+
+          <!-- Form info -->
+           <!-- Modal HTML -->
+        <div id="myModal" class="modal fade">
+          <div class="modal-dialog modal-confirm">
+            <div class="modal-content">
+              <div class="modal-header flex-column">
+                <div class="icon-box">
+                  <i class="material-icons">&#xE5CD;</i>
+                </div>						
+                <h4 class="modal-title w-100">Are you sure?</h4>	
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              </div>
+              <div class="modal-body">
+                <p>Do you really want to delete these records? This process cannot be undone.</p>
+              </div>
+              <div class="modal-footer justify-content-center">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                  <form action="/delete" method ="post">
+                    <div class ="item">
+                      <Button type="submit" class="btn btn-danger" name="deleteButton" value ="<%=carItems.make%>" onClick="this.form.submit()">Delete</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </td> 
+      </tr>
+    </tbody>
+  </table>
+  
+
+<%- include('partials/footer') %>
+
+   <!-- Modal 2 POST Form -->
+   <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -118,33 +190,5 @@
       </div>
     </div>
   </div> 
-</div>
-</div>
-</div>
-</div>
-
-<!-- TEST TEST TEST -->
-
-<div class="container">
-  <div class="row">
-      <div class="col-md-6">
-          <h1>Select make and model.</h1>
-      </div>
-      <div class="col-md-6">
-          <!-- Trigger modal using -->
-          <select class="form-control" id="myselect">
-            <option>select</option>
-            <option value="secondoption">Second Option</option>
-          </select>
-      </div>
-  </div>
-</div>
-
-
-
-<!-- TES TEST TEST -->
-
-<a class="btn btn-dark btn-lg logoutButton" href="/logout" role="button">Log Out</a>
-
-<%- include('partials/footer') %>
-
+  
+  
