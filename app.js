@@ -9,6 +9,9 @@ const passportLocalMongoose = require("passport-local-mongoose");
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const findOrCreate = require('mongoose-findorcreate');
 // const myMapData = require(__dirname + "/gmaps.js");
+const methodOverride = require('method-override');
+const date =require(__dirname + "/date.js");
+
 
 
 const app = express();
@@ -16,6 +19,8 @@ const app = express();
 app.use(express.static("public"));
 
 app.set('view engine', 'ejs');
+
+app.use(methodOverride('_method'));
 
 app.use(bodyParser.urlencoded({extended: true
 }));
@@ -84,6 +89,11 @@ const userSchema = new mongoose.Schema({
 ///////////DYNAMIC USERNAME///////////////
 let users = [];
 
+//////////Date///////////////////////////
+let day = date.getDate();
+
+
+
 
 //Plugins
 userSchema.plugin(findOrCreate);
@@ -133,7 +143,7 @@ passport.use(new GoogleStrategy({
   }
 ));
 
- 
+
 ////////////////// LOGIN SECTION ///////////////////////
 
 app.get("/", function(req,res){
@@ -163,16 +173,17 @@ app.get("/register", function(req,res){
 app.get("/home", function(req, res){
   if(req.isAuthenticated()){
     Car.find({}, function(err,foundCar){
-    res.render("home", {carItems:foundCar,users:users});
+    res.render("home", {carItems:foundCar,users:users,day:day});
      });
   };
 });
 
+
        
 app.get("/cars", function(req, res){
     if(req.isAuthenticated()){
-    Car.find({}, function(err,foundCar){
-    res.render("cars", {carItems:foundCar,users:users});
+    Car.find({_id:"5fdf970ce7a7cf710d25fe15"}, function(err,foundCar){
+    res.render("cars", {carItems:foundCar,users:users,day:day});
      });
   };
 });   
@@ -180,7 +191,7 @@ app.get("/cars", function(req, res){
 app.get("/truckInventory", function(req, res){
         if(req.isAuthenticated()){
         Truck.find({}, function(err,foundTruck){
-          res.render("truckInventory", {truckItems:foundTruck,users:users});
+          res.render("truckInventory", {truckItems:foundTruck,users:users,day:day});
        
              });
            };
@@ -188,7 +199,7 @@ app.get("/truckInventory", function(req, res){
 app.get("/boatInventory", function(req, res){
         if(req.isAuthenticated()){
         Boat.find({}, function(err,foundBoat){
-            res.render("boatInventory", {boatItems:foundBoat,users:users});
+            res.render("boatInventory", {boatItems:foundBoat,users:users,day:day});
          
                });
              };
@@ -229,19 +240,19 @@ app.get("/submitCars", function(req, res){
           });   
 app.get("/forms", function(req, res){
        if(req.isAuthenticated()){
-       res.render("forms", {users:users});
+       res.render("forms", {users:users,day:day});
                 
              };
           }); 
 app.get("/services", function(req, res){
        if(req.isAuthenticated()){
-       res.render("services", {users:users});
+       res.render("services", {users:users,day:day});
                 
              };
           });                          
 app.get("/data", function(req, res){
        if(req.isAuthenticated()){
-       res.render("data", {users:users});
+       res.render("data", {users:users,day:day});
                 
              };
           });
@@ -324,12 +335,12 @@ Car.find({},function(err,foundCar){
 })
 .put(function(req,res){
   Car.update(
-     {Make: req.params.id},
-     {Make: req.body.Make, Model: req.body.Model,
-      Year: req.body.Year, Seats: req.body.Seats,
-      Color:req.body.Color, VIN:req.body.Vin,
-      Current_Mileage:req.body.Current_Mileage, Service_Interval:req.body.Service_Interval,
-      Next_Service:req.body.Next_Service
+     {_id: req.params.id},
+     {make: req.body.make, model: req.body.model,
+      year: req.body.year, seats: req.body.seats,
+      color:req.body.color, vin:req.body.vin,
+      current_mileage:req.body.current_mileage, service_interval:req.body.service_Interval,
+      next_service:req.body.next_service
     },
       {overwrite: true},
       function(err){
@@ -395,7 +406,7 @@ app.post("/delete", function(req,res){
   console.log(req.body);
   const checkedItemId =(req.body.deleteButton);
 
-Car.findOneAndDelete(checkedItemId,function(err){
+Car.findByIdAndRemove(checkedItemId,function(err){
   
   if (err){
     console.log(err);

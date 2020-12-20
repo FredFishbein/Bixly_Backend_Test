@@ -124,11 +124,9 @@ h4, h5 {
 .JeepModalOne {
   padding-bottom: 20px;
   color: black;
-  border-radius: 30px;
-  border-bottom-left-radius: 55px;
-  border-bottom-right-radius: 55px;
-  height: 260px;
-  width: auto;
+  margin-top: 10px;
+  height: 300px;
+  width: 440px;
 }
 
 .logoutButton {
@@ -186,7 +184,7 @@ h4, h5 {
   width: 280px;
   height: 40px;
   background-color: #26272b;
-  margin-top: 20px;
+  margin-top: 10px;
   margin-left: 700px;
   margin-bottom: 20px;
   border-radius: 10px;
@@ -197,8 +195,20 @@ h4, h5 {
     width: 280px;
     height: 40px;
     background-color: #26272b;
-    margin-top: 20px;
-    margin-left: 300px;
+    margin-top: 10px;
+    margin-left: 400px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .carHeader {
+    width: 280px;
+    height: 40px;
+    background-color: #26272b;
+    margin-top: 10px;
+    margin-left: 260px;
     margin-bottom: 20px;
     border-radius: 10px;
   }
@@ -219,11 +229,11 @@ h4, h5 {
 }
 
 .backgroundForButtonsAboveTable {
-  width: 520px;
+  width: 380px;
   height: 60px;
   background-color: #212529;
-  margin-top: 20px;
-  margin-left: 1100px;
+  margin-top: 10px;
+  margin-left: 1150px;
   margin-bottom: 10px;
   border-radius: 10px;
 }
@@ -233,7 +243,7 @@ h4, h5 {
     width: 520px;
     height: 60px;
     background-color: #212529;
-    margin-top: 20px;
+    margin-top: 10px;
     margin-left: 400px;
     margin-bottom: 10px;
     border-radius: 10px;
@@ -245,7 +255,7 @@ h4, h5 {
     width: 520px;
     height: 60px;
     background-color: #212529;
-    margin-top: 20px;
+    margin-top: 10px;
     margin-left: 200px;
     margin-bottom: 10px;
     border-radius: 10px;
@@ -373,6 +383,30 @@ h4, h5 {
   margin-bottom: 20px;
   border-radius: 10px;
   margin-left: 60px;
+}
+
+@media screen and (max-width: 900px) {
+  .IntroHeaderOnNavbar {
+    width: 40%;
+    font: 1rem;
+  }
+}
+
+.IntroHeaderOnNavbarForDate {
+  width: 900px;
+  height: 40px;
+  background-color: #26272b;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  margin-left: 40px;
+  margin-right: 10px;
+}
+
+@media screen and (max-width: 900px) {
+  .IntroHeaderOnNavbarForDate {
+    display: none;
+  }
 }
 
 #cursorToHandInfoButton {
@@ -700,8 +734,8 @@ body {
 
 .buttonHome {
   color: white;
-  width: 60%;
-  margin-left: 20%;
+  width: 25%;
+  margin-left: 30%;
   text-decoration: none;
 }
 
@@ -890,7 +924,7 @@ nav ul, nav li {
 }
 
 .search {
-  width: 518px;
+  width: 510px;
   height: 40px;
   margin-left: 1100px;
   background: #272626;
@@ -951,6 +985,13 @@ nav ul, nav li {
 @media screen and (max-width: 900px) {
   .search {
     margin-left: 200px;
+    margin-top: 50px;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .search {
+    margin-top: 50px;
   }
 }
 
@@ -959,7 +1000,8 @@ nav ul, nav li {
 }
 
 #modalMovetoCenter {
-  margin-right: 800px;
+  margin-right: 900px;
+  margin-bottom: 200px;
 }
 
 @media screen and (max-width: 1100px) {

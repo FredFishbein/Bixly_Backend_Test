@@ -42,7 +42,7 @@
         <td> <% boatItems.forEach(function(item){ %>
             <form action="/delete3" method ="post">
               <div class ="item">
-                <p><input type="checkbox" name="checkboxForBoat" value ="<%=item._id%>" onChange="this.form.submit()"> (PERMANENT) <%=item.make%> <%=item._id%></p> 
+                <button class="btn btn-danger deleteButton" value ="<%=item._id%>" name="checkboxForBoat" onChange="this.form.submit()">Delete</button>
               </div>
             </form>
           <% }) %>
@@ -90,7 +90,7 @@
         <td> <% boatItems.forEach(function(item){ %>
             <form action="/delete3" method ="post">
               <div class ="item">
-                <p><input type="checkbox" name="checkboxForBoat" value ="<%=item._id%>" onChange="this.form.submit()"> (PERMANENT) <%=item.make%> <%=item._id%></p> 
+                <button name="checkboxForBoat" value ="<%=item._id%>" onChange="this.form.submit()">DELETE</p> 
               </div>
             </form>
           <% }) %>

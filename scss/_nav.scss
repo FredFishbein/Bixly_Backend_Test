@@ -114,18 +114,6 @@ top: -7px;
 }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-  
 .IntroHeaderOnNavbar{
 width:1000px;
 height: 40px;
@@ -136,6 +124,27 @@ border-radius: 10px;
 margin-left: 60px;
 
 }
+@media screen and (max-width:900px){
+    .IntroHeaderOnNavbar{
+    width:40%;
+    font:1rem; 
+    }
+    }
+.IntroHeaderOnNavbarForDate{
+width:900px;
+height: 40px;
+background-color:#26272b;
+margin-top: 20px; 
+margin-bottom: 20px;
+border-radius: 10px;
+margin-left: 40px;
+margin-right:10px
+}
+@media screen and (max-width:900px){
+    .IntroHeaderOnNavbarForDate{
+    display:none
+    }
+    }
 // @media screen and (max-width:1025px){
 // .IntroHeaderOnNavbar{
 // margin-right:85px;

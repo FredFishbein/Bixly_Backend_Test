@@ -55,11 +55,9 @@ border-radius: 7px;
 .JeepModalOne{
 padding-bottom:20px;
 color:black;
-border-radius: 30px;
-border-bottom-left-radius: 55px;
-border-bottom-right-radius: 55px;
-height:260px;
-width:auto
+margin-top: 10px;
+height:300px;
+width:440px
 }
 
 .logoutButton{
@@ -118,7 +116,7 @@ border-radius: 10px;
 width:280px;
 height: 40px;
 background-color:#26272b;
-margin-top: 20px;
+margin-top: 10px;
 margin-left:700px;
 margin-bottom: 20px;
 border-radius: 10px;
@@ -128,12 +126,23 @@ border-radius: 10px;
 width:280px;
 height: 40px;
 background-color:#26272b;
-margin-top: 20px;
-margin-left:300px;
+margin-top: 10px;
+margin-left:400px;
 margin-bottom: 20px;
 border-radius: 10px; 
 }
 }
+@media screen and (max-width:900px){
+  .carHeader{
+  width:280px;
+  height: 40px;
+  background-color:#26272b;
+  margin-top: 10px;
+  margin-left:260px;
+  margin-bottom: 20px;
+  border-radius: 10px; 
+  }
+  }
 
 .truckHeader{
 width:280px;
@@ -150,11 +159,11 @@ padding-right: 20px;
 }
 
 .backgroundForButtonsAboveTable{
-width:520px;
+width:380px;
 height: 60px;
 background-color:#212529;
-margin-top: 20px;
-margin-left:1100px;
+margin-top: 10px;
+margin-left:1150px;
 margin-bottom: 10px;
 border-radius: 10px;
 }
@@ -163,7 +172,7 @@ border-radius: 10px;
 width:520px;
 height: 60px;
 background-color:#212529;
-margin-top: 20px;
+margin-top: 10px;
 margin-left:400px;
 margin-bottom: 10px;
 border-radius: 10px;  
@@ -174,7 +183,7 @@ border-radius: 10px;
 width:520px;
 height: 60px;
 background-color:#212529;
-margin-top: 20px;
+margin-top: 10px;
 margin-left:200px;
 margin-bottom: 10px;
 border-radius: 10px;  
