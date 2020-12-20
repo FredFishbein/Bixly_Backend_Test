@@ -83,7 +83,7 @@
         <th scope="col">Mileage</th>
         <th scope="col">Year</th>
         <th scope="col">Next Service</th>
-        <th scope="col">Delete</th>
+        <th scope="col">Delete (Permanent)</th>
       </tr>
     </thead>
     <tbody>
@@ -125,37 +125,12 @@
         <% }); %>
         </td>
         <td> <% carItems.forEach(function(item){ %>
-          <div class ="item">
-                <button href="#myModalForCar" type="button" name = "deleteButton" class="btn btn-danger deleteButton" data-toggle="modal">Delete</button>
-          </div>
-          <% }) %> 
-
-          <!-- Form info -->
-           <!-- Modal HTML -->
-        <div id="myModalForCar" class="modal fade">
-          <div class="modal-dialog modal-confirm">
-            <div class="modal-content">
-              <div class="modal-header flex-column">
-                <div class="icon-box">
-                  <i class="material-icons">&#xE5CD;</i>
-                </div>						
-                <h4 class="modal-title w-100">Are you sure?</h4>	
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-              </div>
-              <div class="modal-body">
-                <p>Do you really want to delete these records? This process cannot be undone.</p>
-              </div>
-              <div class="modal-footer justify-content-center">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                  <form action="/delete" method ="post">
-                    <div class ="item">
-                      <Button type="submit" class="btn btn-danger" name="deleteButton" value ="<%=carItems.make%>" onClick="this.form.submit()">Delete</button>
-                    </div>
-                  </form>
-                </div>
-              </div>
+          <form action="/deleteForHomepage" method ="post">
+            <div class ="item">
+              <button class="btn btn-danger deleteButton" value ="<%=item._id%>" name="deleteButtonForHomepage" onChange="this.form.submit()">Delete Profile</button>
             </div>
-          </div>
+          </form>
+          <% }) %> 
         </td> 
       </tr>
     </tbody>

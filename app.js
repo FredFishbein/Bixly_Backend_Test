@@ -124,9 +124,9 @@ passport.deserializeUser(function(id, done) {
 passport.use(new GoogleStrategy({
     clientID: process.env.CLIENT_ID,
     clientSecret: process.env.CLIENT_SECRET,
-       callbackURL: "http://www.fredsgarages.com/auth/google/home",
+      //  callbackURL: "http://www.fredsgarages.com/auth/google/home",
     // callbackURL: "https://safe-escarpment-24838.herokuapp.com/auth/google/cars",
-    // callbackURL: "http://localhost:3000/auth/google/home",
+    callbackURL: "http://localhost:3000/auth/google/home",
     userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo",
 
   },
@@ -415,17 +415,17 @@ Car.findByIdAndRemove(checkedItemId,function(err){
     }   
   });
 });
-app.post("/delete2", function(req,res){
-  const checkedItemId =(req.body.checkboxForTruck);
+app.post("/deleteForHomepage", function(req,res){
+  const checkedItemId =(req.body.deleteButtonForHomepage);
   console.log(req.body);
 
 
 
-Truck.findByIdAndRemove(checkedItemId,function(err){
+Car.findByIdAndRemove(checkedItemId,function(err){
   if (err){
     console.log(err);
     }else{
-      res.redirect("/truckInventory");
+      res.redirect("/home");
     }   
   });
 });
