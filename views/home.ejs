@@ -2,13 +2,15 @@
 <%- include('navbar') %>
 <%- include('sidenavbar') %>
 
+<div class = "carHeader">
+  <h4>Home</h4>
+  </div>
+
 <iframe id ="topIframeA" style="background: #212529;border: none;margin-left:120px; margin-bottom:20px; margin-top:25px; border-radius: 15px; box-shadow: 0 2px 10px 0 rgba(70, 76, 79, .2);" width="480" height="340" src="https://charts.mongodb.com/charts-project-0-btbvr/embed/charts?id=fa4b44f9-cbca-4df9-8991-6a6d4fe69154&autoRefresh=3600&theme=dark"></iframe>
 <iframe id ="topIframeB" style="background: #212529;border: none;margin-left:20px; margin-bottom:20px; margin-top:25px; border-radius: 15px; box-shadow: 0 2px 10px 0 rgba(70, 76, 79, .2);" width="480" height="340" src="https://charts.mongodb.com/charts-project-0-btbvr/embed/charts?id=bb4be7fa-a343-474c-b36a-ed68374d7b0f&theme=dark"></iframe>
 <iframe id ="topIframeC" style="background: #212529;border: none;margin-left:20px; margin-bottom:20px; margin-top:25px; border-radius: 15px;box-shadow: 0 2px 10px 0 rgba(70, 76, 79, .2);" width="480" height="340" src="https://charts.mongodb.com/charts-project-0-btbvr/embed/charts?id=83029de4-6316-45cd-93d9-536aead38ce8&theme=dark"></iframe>
 
-<div class = "carHeader">
-<h4>Home</h4>
-</div>
+
 
 <form action="/searchCars" class="search" method="POST">
   <input type="text" id="searchInput" name="searchInput" placeholder="Search here..." required>
